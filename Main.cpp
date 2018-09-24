@@ -1,80 +1,82 @@
+// --------------------------------------
+// Includes
+// --------------------------------------
+// Libraries
 #include <SFML/Graphics.hpp>
-#include <SFML/Audio.hpp>
-#include <string>
+
+
 
 int main()
 {
+	// --------------------------------------
+	// Game Setup
+	// --------------------------------------
 
-	//----------------------------------------------
-	//GAME SETUP
-	//----------------------------------------------
+	// Render Window creation
 	sf::RenderWindow gameWindow;
-	gameWindow.create(sf::VideoMode::getDesktopMode(), "WhackaCritter",
-	sf::Style::Titlebar | sf::Style::Close);
+	gameWindow.create(sf::VideoMode::getDesktopMode(), "Whack A Critter",
+		sf::Style::Titlebar | sf::Style::Close);
 
-	//Timer function
+	// Timer functionality
 	sf::Clock gameClock;
 
-	//end game setup
+	// end game setup
+	// --------------------------------------
 
-	//------------------------------------------------
-	// GAME LOOP
-	//------------------------------------------------
 
+	// --------------------------------------
+	// Game Loop
+	// --------------------------------------
 	while (gameWindow.isOpen())
 	{
-		//--------------------------------------------
-		// INPUT
-		//--------------------------------------------
-
+		// --------------------------------------
+		// Input
+		// --------------------------------------
 		sf::Event event;
 		while (gameWindow.pollEvent(event))
 		{
-
-
 			if (event.type == sf::Event::Closed)
 			{
 				gameWindow.close();
-			}//endif
-		}//end event polling loop
+			} // End if (closed)
+		} // end event polling loop
+
+		// end input
+		// --------------------------------------
 
 
-
-	// END INPUT
-	//-------------------------------------
-
-
-	//--------------------------------------
-	// UPDATE
-	//--------------------------------------
+		// --------------------------------------
+		// Update
+		// --------------------------------------
 		sf::Time frameTime = gameClock.restart();
 
-			//end update
-			//---------------------------------
+		// end update
+		// --------------------------------------
 
 
-			//---------------------------------
-			// DRAW
-			//---------------------------------
+
+		// --------------------------------------
+		// Draw
+		// --------------------------------------
+
+		// Clear the window to a single colour
+		gameWindow.clear();
+
+		// Draw Everything
 
 
-			//clear window to single colour
-			gameWindow.clear();
-
-		//draw everything
-
-		//display window contents to screen
+		// Display the window contents to the screen
 		gameWindow.display();
 
-		//---------------------------------
-		//end draw
-		//--------------------------------
+		// end draw
+		// --------------------------------------
 
-	} //end of game while loop
-	//end of game loop
-	//-----------------------------------
+	} // end of the game while loop
 
+	// end game loop
+	// --------------------------------------
 
-	//exit point of program
+	// exit point for the program
 	return 0;
-} //end of main function()
+
+} // end of the main() function
